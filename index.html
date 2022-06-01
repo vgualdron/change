@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Petrosky</title>
   <link rel="stylesheet" href="./index_files/bulma.min.css">
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/v-tag-input@0.0.3/dist/v-tag-input.js"></script>
 </head>
 <style>
   .button {
@@ -30,22 +32,28 @@
     margin: 0 auto;
     z-index: 1;
   }
-
 </style>
-<body>
-  <h1 class="is-size-1 text">Petrosky</h1>
-  <img class="image" src="./index_files/cosmos-4112660_1280.jpg">
-  <br>
-  <button class="button is-primary" id="btnCapturar">Exportar imagen</button>
-  <!--
-    Cargar el script de html2canvas, podría ser desde un servidor
-    propio o como yo lo hago: desde jsdelivr
-  -->
-  <script type="text/javascript" src="./index_files/html2canvas.min.js.descarga"></script>
 
-  <!--
-      Después de eso, cargar el script que contiene nuestra lógica
-    -->
+<body>
+  <div id="app">
+    <h1 class="is-size-1 text"> {{ name }} </h1>
+    <img class="image" src="./index_files/cosmos-4112660_1280.jpg">
+    <br>
+    <input class="input" type="text" placeholder="Escribe tu nombre">
+    <br>
+    <button class="button is-primary" id="btnCapturar">Exportar imagen</button>
+  </div>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        name: ''
+      }
+    })
+  </script>
+
+  <script type="text/javascript" src="./index_files/html2canvas.min.js.descarga"></script>
   <script src="./index_files/script.js.descarga"></script>
 
 </body>
