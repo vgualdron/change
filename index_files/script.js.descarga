@@ -11,7 +11,7 @@ $boton.addEventListener("click", () => {
   const opciones = {
     ignoreElements: elemento => {
       const tipo = elemento.nodeName.toLowerCase();
-      if (tipo === "button") {
+      if (tipo === "button" || tipo === "input") {
         return true;
       }
       return false
