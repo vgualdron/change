@@ -20,7 +20,7 @@ $boton.addEventListener("click", () => {
   html2canvas($objetivo, opciones)
     .then(canvas => {
       let enlace = document.createElement('a');
-      enlace.download = "Captura de página web - Parzibyte.me.png";
+      enlace.download = "Image";
       enlace.href = canvas.toDataURL();
       enlace.click();
     });
