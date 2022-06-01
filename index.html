@@ -10,21 +10,33 @@
   <link rel="stylesheet" href="./index_files/bulma.min.css">
 </head>
 <style>
-  body {
-    background-image: url("./index_files/cosmos-4112660_1280.jpg");
-    background-color: #fff;
-    background-repeat: no-repeat;
-    height: 800px;
+  .button {
+    text-align: center;
+    width: -webkit-fill-available;
   }
+
+  .image {
+    margin: auto;
+    width: auto;
+    position: relative;o;
+  }
+
   .text {
-
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
   }
-</style>
 
+</style>
 <body>
   <h1 class="is-size-1 text">Petrosky</h1>
+  <img class="image" src="./index_files/cosmos-4112660_1280.jpg">
   <br>
-  <button id="btnCapturar">Export</button>
+  <button class="button is-primary" id="btnCapturar">Exportar imagen</button>
   <!--
     Cargar el script de html2canvas, podría ser desde un servidor
     propio o como yo lo hago: desde jsdelivr
