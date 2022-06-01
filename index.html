@@ -36,10 +36,10 @@
 
 <body>
   <div id="app">
-    <h1 class="is-size-1 text"> {{ name }} </h1>
+    <h1 class="is-size-1 text">{{name}}</h1>
     <img class="image" src="./index_files/cosmos-4112660_1280.jpg">
     <br>
-    <input class="input" type="text" placeholder="Escribe tu nombre">
+    <input class="input" type="text" placeholder="Escribe tu nombre" v-model="name">
     <br>
     <button class="button is-primary" id="btnCapturar">Exportar imagen</button>
   </div>
