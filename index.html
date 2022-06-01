@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0097)https://parzibyte.github.io/ejemplos-html2canvas-javascript/4-Tomar-captura-de-webpage-Descargar/ -->
 <html>
 
 <head>
@@ -32,11 +31,40 @@
     margin: 0 auto;
     z-index: 1;
   }
+
+  .text>h1 {
+    display: inline;
+    font-size: 107px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .text>h1.zero {
+    color: #fff;
+  }
+
+  .text>h1.one {
+    color: #ff9b03;
+  }
+
+  .text>h1.two {
+    color: #0f2a8c;
+  }
+
+  .text>h1.three {
+    color: #eb0500;
+  }
+
+  .text>h1.four {
+    color: #32a927;
+  }
 </style>
 
 <body>
   <div id="app">
-    <h1 class="is-size-1 text">{{name}}</h1>
+    <div class="is-size-1 text">
+      <h1 v-for="(t, index ) in text" :class="t.color">{{t.value}}</h1>
+    </div>
     <img class="image" src="./index_files/cosmos-4112660_1280.jpg">
     <br>
     <input class="input" type="text" placeholder="Escribe tu nombre" v-model="name">
@@ -48,7 +76,42 @@
     new Vue({
       el: "#app",
       data: {
-        name: 'Tu nombre'
+        colors: [
+          "zero",
+          "one",
+          "two",
+          "three",
+          "four",
+        ],
+        name: 'Tu nombre',
+      },
+      computed: {
+        text() {
+          let data = [];
+          const array = this.name.split('');
+          let i = 1;
+          array.forEach(element => {
+            if (element != ' ') {
+              data.push({
+                value: element,
+                color: this.colors[i]
+              });
+              i++;
+
+            } else {
+              data.push({
+                value: element,
+                color: this.colors[0]
+              });
+            }
+
+            if (i > 4) {
+              i = 1;
+            }
+
+          });
+          return data;
+        }
       }
     })
   </script>
