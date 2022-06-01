@@ -21,6 +21,11 @@
     width: auto;
     position: relative;
   }
+  .paloma {
+    width: 90px;
+    margin-bottom: 45px;
+    margin-left: -40px;
+  }
 
   .text {
     text-align: center;
@@ -59,12 +64,16 @@
   .text>h1.four {
     color: #32a927;
   }
+  .text>h1.five {
+    color: #911886;
+  }
 </style>
 
 <body>
   <div id="app">
     <div class="is-size-1 text">
       <h1 v-for="(t, index ) in text" :class="t.color">{{t.value}}</h1>
+      <img class="paloma" src="./index_files/paloma.png">
     </div>
     <img class="image" src="./index_files/cosmos-4112660_1280.jpg">
     <br>
@@ -83,6 +92,7 @@
           "two",
           "three",
           "four",
+          "five",
         ],
         name: 'Tu nombre',
       },
